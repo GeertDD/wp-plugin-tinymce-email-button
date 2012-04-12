@@ -50,7 +50,12 @@ class TinyMCE_Email_Button {
 	 */
 	public function i18n()
 	{
-		// TODO: load language files
+		// Load language files
+		// See: http://www.geertdedeckere.be/article/loading-wordpress-language-files-the-right-way
+		$domain = 'tinymce-email-button';
+		$locale = apply_filters('plugin_locale', get_locale(), $domain);
+		load_textdomain($domain, WP_LANG_DIR.'/tinymce-email-button/'.$domain.'-'.$locale.'.mo');
+		load_plugin_textdomain($domain, FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
 
 		// Localization for the tinymce-email-button.js file
 		wp_localize_script('editor', 'tinymce_email_button', array(

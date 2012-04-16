@@ -32,6 +32,23 @@
 				var newText = '<a href="mailto:' + email + '">' + linkText + '</a>';
 				editor.execCommand('mceInsertContent', false, newText);
 			});
+
+			editor.onNodeChange.add(function (ed, cm, el) { // cm = ControlManager
+				// Reset email button status
+				cm.setActive('email', false);
+				cm.setDisabled('email', false);
+
+				if (el.nodeName === 'A') {
+					var href = el.href || '';
+					if (href.match(/^mailto:/i)) {
+						// Enable the button when an email link is selected
+						cm.setActive('email', true);
+					} else {
+						// Disable the button if a regular link is selected
+						cm.setDisabled('email', true);
+					}
+				}
+			});
 		}
 
 	});

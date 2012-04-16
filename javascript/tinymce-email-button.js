@@ -14,8 +14,9 @@
 				// Grab the selected text
 				var linkText = editor.selection.getContent({ format:'text' });
 
-				// If an email address was selected, use that email as default input in the prompt
-				var defaultInput = (linkText.match(/^\S+@\S+\.\S+$/)) ? linkText : '';
+				// Look for an email in the selection and use that email as default input in the prompt
+				var found = linkText.match(/\S+@\S+\.[a-z]+/i);
+				var defaultInput = (found) ? found[0] : '';
 
 				// Ask for the email address to link to
 				var email = prompt(tinymce_email_button.prompt, defaultInput);

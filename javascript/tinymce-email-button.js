@@ -1,4 +1,4 @@
-;(function () {
+(function () {
 
 	tinymce.create('tinymce.plugins.email', {
 

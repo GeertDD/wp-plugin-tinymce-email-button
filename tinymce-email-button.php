@@ -98,7 +98,8 @@ class TinyMCE_Email_Button {
 	 */
 	public function mce_external_plugins($plugins)
 	{
-		$plugins['email'] = plugin_dir_url(__FILE__).'javascript/tinymce-email-button.js';
+		$suffix = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min';
+		$plugins['email'] = plugin_dir_url(__FILE__).'javascript/tinymce-email-button'.$suffix.'.js';
 		return $plugins;
 	}
 

@@ -27,10 +27,6 @@ class TinyMCE_Email_Button {
 	 * @return void
 	 */
 	public function init() {
-		// This plugin only applies to Wysiwyg areas in the admin
-		if ( ! is_admin() || 'true' !== get_user_option( 'rich_editing' ) )
-			return;
-
 		// Setup internationalisation first
 		$this->i18n();
 

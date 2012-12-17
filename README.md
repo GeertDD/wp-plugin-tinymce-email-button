@@ -3,6 +3,8 @@ TinyMCE Email Button (WordPress plugin)
 
 A small plugin that adds a button for inserting email links to the WordPress wysiwyg editor.
 
+![Screenshot](https://raw.github.com/GeertDD/wp-plugin-tinymce-email-button/master/screenshot.png)
+
 Changelog
 ---------
 

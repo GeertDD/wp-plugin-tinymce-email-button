@@ -25,7 +25,7 @@
 				if ( ! email) return;
 
 				// If no text was selected, use the email address as text for the link
-				if (linkText === '') {
+				if ('' === linkText) {
 					linkText = email;
 				}
 
@@ -39,7 +39,7 @@
 				cm.setActive('email', false);
 				cm.setDisabled('email', false);
 
-				if (el.nodeName === 'A') {
+				if ('A' === el.nodeName) {
 					var href = el.href || '';
 					if (href.match(/^mailto:/i)) {
 						// Enable the button when an email link is selected

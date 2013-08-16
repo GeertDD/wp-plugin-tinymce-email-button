@@ -8,7 +8,7 @@ Author: Geert De Deckere
 Author URI: http://www.geertdedeckere.be/
 */
 
-new TinyMCE_Email_Button;
+$GLOBALS['tinymce_email_button'] = new TinyMCE_Email_Button;
 
 class TinyMCE_Email_Button {
 

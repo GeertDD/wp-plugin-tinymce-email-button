@@ -32,6 +32,9 @@ class TinyMCE_Email_Button {
 		// Setup internationalisation first
 		$this->i18n();
 
+		// JavaScript translations for the button
+		add_action( 'admin_enqueue_scripts', array( $this, 'localize_script' ) );
+
 		// Note: the TinyMCE Advanced plugin also uses these hooks and uses priority 999.
 		// We need a higher priority in order for the button to be added succesfully.
 		// See: http://wordpress.org/extend/plugins/tinymce-advanced/
@@ -51,8 +54,14 @@ class TinyMCE_Email_Button {
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 		load_textdomain( $domain, WP_LANG_DIR."/tinymce-email-button/$domain-$locale.mo" );
 		load_plugin_textdomain( $domain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
 
-		// Localization for the tinymce-email-button.js file
+	/**
+	 * Localization for the tinymce-email-button.js file
+	 *
+	 * @return void
+	 */
+	public function localize_script() {
 		wp_localize_script( 'editor', 'tinymce_email_button', array(
 			'url'    => plugin_dir_url( __FILE__ ),
 			'title'  => __( 'Insert e-mail link', 'tinymce-email-button' ),

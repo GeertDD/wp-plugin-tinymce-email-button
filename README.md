@@ -8,6 +8,10 @@ A small plugin that adds a button for inserting email links to the WordPress wys
 Changelog
 ---------
 
+### 1.2
+
+* Fixed compatibility with WordPress 3.6
+
 ### 1.1
 * Email button also added to editor if used on front-end
 * Conversion to WP coding standards

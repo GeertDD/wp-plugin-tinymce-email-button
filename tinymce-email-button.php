@@ -3,7 +3,7 @@
 Plugin Name: TinyMCE Email Button
 Plugin URI: https://github.com/GeertDD/wp-plugin-tinymce-email-button
 Description: Adds a button for creating email links to the TinyMCE editor
-Version: 1.1
+Version: 1.2
 Author: Geert De Deckere
 Author URI: http://www.geertdedeckere.be/
 */
@@ -12,7 +12,7 @@ $GLOBALS['tinymce_email_button'] = new TinyMCE_Email_Button;
 
 class TinyMCE_Email_Button {
 
-	const VERSION = '1.1';
+	const VERSION = '1.2';
 
 	/**
 	 * Constructor
